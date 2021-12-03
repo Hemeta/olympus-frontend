@@ -1,6 +1,6 @@
 import { NodeHelper } from "./helpers/NodeHelper";
 import { EnvHelper } from "./helpers/Environment";
-import polygon from "./assets/tokens/wMATIC.svg";
+import ethereum from "./assets/tokens/wMATIC.svg";
 import arbitrum from "./assets/arbitrum.png";
 import avalanche from "./assets/tokens/AVAX.svg";
 
@@ -164,7 +164,7 @@ export const addresses: IAddresses = {
 };
 
 /**
- * Network details required to add a network to a user's wallet, as defined in EIP-3085 (https://eips.polygon.org/EIPS/eip-3085)
+ * Network details required to add a network to a user's wallet, as defined in EIP-3085 (https://eips.ethereum.org/EIPS/eip-3085)
  */
 
 interface INativeCurrency {
@@ -202,30 +202,30 @@ export const NETWORKS: { [key: number]: INetwork } = {
       decimals: 18,
     },
     rpcUrls: [""],
-    blockExplorerUrls: ["https://polygonscan.com/#/"],
-    image: polygon,
-    imageAltText: "Polygon Logo",
+    blockExplorerUrls: ["https://polygon-rpc.com/#/"],
+    image: ethereum,
+    imageAltText: "Ethereum Logo",
     uri: () => NodeHelper.getMainnetURI(1),
   },
   4: {
     chainName: "Rinkeby Testnet",
     chainId: 4,
     nativeCurrency: {
-      name: "Polygon",
+      name: "Ethereum",
       symbol: "MATIC",
       decimals: 18,
     },
     rpcUrls: [""],
     blockExplorerUrls: ["https://rinkeby.maticerscan.io/#/"],
-    image: polygon,
-    imageAltText: "Polygon Logo",
+    image: ethereum,
+    imageAltText: "Ethereum Logo",
     uri: () => NodeHelper.getMainnetURI(4),
   },
   42161: {
     chainName: "Arbitrum",
     chainId: 42161,
     nativeCurrency: {
-      name: "Polygon",
+      name: "Ethereum",
       symbol: "MATIC",
       decimals: 18,
     },
@@ -239,7 +239,7 @@ export const NETWORKS: { [key: number]: INetwork } = {
     chainName: "Arbitrum Testnet",
     chainId: 421611,
     nativeCurrency: {
-      name: "Polygon",
+      name: "Ethereum",
       symbol: "MATIC",
       decimals: 18,
     },
