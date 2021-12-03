@@ -1,6 +1,6 @@
 import { NodeHelper } from "./helpers/NodeHelper";
 import { EnvHelper } from "./helpers/Environment";
-import ethereum from "./assets/tokens/wETH.svg";
+import polygon from "./assets/tokens/wMATIC.svg";
 import arbitrum from "./assets/arbitrum.png";
 import avalanche from "./assets/tokens/AVAX.svg";
 
@@ -17,8 +17,8 @@ interface IPoolGraphURLS {
 }
 
 export const POOL_GRAPH_URLS: IPoolGraphURLS = {
-  4: "https://api.thegraph.com/subgraphs/name/pooltogether/rinkeby-v3_4_3",
-  1: "https://api.thegraph.com/subgraphs/name/pooltogether/pooltogether-v3_4_3",
+  4: "https://api.thegraph.com/subgraphs/name/pooltogmaticer/rinkeby-v3_4_3",
+  1: "https://api.thegraph.com/subgraphs/name/pooltogmaticer/pooltogmaticer-v3_4_3",
 };
 
 interface IAddresses {
@@ -53,7 +53,7 @@ export const addresses: IAddresses = {
   },
   1: {
     DAI_ADDRESS: "0x6b175474e89094c44da98b954eedeac495271d0f", // duplicate
-    OHM_ADDRESS: "0x383518188c0c6d7730d91b2c03a03c837814a899",
+    OHM_ADDRESS: "0x2013196951B1a35a1a1A400f95e6f08E7fCdB5f0",
     STAKING_ADDRESS: "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a", // The new staking contract
     STAKING_HELPER_ADDRESS: "0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d", // Helper contract used for Staking only
     OLD_STAKING_ADDRESS: "0x0822F3C03dcc24d200AFF33493Dc08d0e1f274A2",
@@ -164,7 +164,7 @@ export const addresses: IAddresses = {
 };
 
 /**
- * Network details required to add a network to a user's wallet, as defined in EIP-3085 (https://eips.ethereum.org/EIPS/eip-3085)
+ * Network details required to add a network to a user's wallet, as defined in EIP-3085 (https://eips.polygon.org/EIPS/eip-3085)
  */
 
 interface INativeCurrency {
@@ -194,39 +194,39 @@ export const NEWEST_NETWORK_ID = 43114;
 
 export const NETWORKS: { [key: number]: INetwork } = {
   1: {
-    chainName: "Ethereum",
-    chainId: 1,
+    chainName: "Polygon",
+    chainId: 37,
     nativeCurrency: {
-      name: "Ethereum",
-      symbol: "ETH",
+      name: "Polygon",
+      symbol: "MATIC",
       decimals: 18,
     },
     rpcUrls: [""],
-    blockExplorerUrls: ["https://etherscan.io/#/"],
-    image: ethereum,
-    imageAltText: "Ethereum Logo",
+    blockExplorerUrls: ["https://polygonscan.com/#/"],
+    image: polygon,
+    imageAltText: "Polygon Logo",
     uri: () => NodeHelper.getMainnetURI(1),
   },
   4: {
     chainName: "Rinkeby Testnet",
     chainId: 4,
     nativeCurrency: {
-      name: "Ethereum",
-      symbol: "ETH",
+      name: "Polygon",
+      symbol: "MATIC",
       decimals: 18,
     },
     rpcUrls: [""],
-    blockExplorerUrls: ["https://rinkeby.etherscan.io/#/"],
-    image: ethereum,
-    imageAltText: "Ethereum Logo",
+    blockExplorerUrls: ["https://rinkeby.maticerscan.io/#/"],
+    image: polygon,
+    imageAltText: "Polygon Logo",
     uri: () => NodeHelper.getMainnetURI(4),
   },
   42161: {
     chainName: "Arbitrum",
     chainId: 42161,
     nativeCurrency: {
-      name: "Ethereum",
-      symbol: "ETH",
+      name: "Polygon",
+      symbol: "MATIC",
       decimals: 18,
     },
     rpcUrls: ["https://arb1.arbitrum.io/rpc"],
@@ -239,8 +239,8 @@ export const NETWORKS: { [key: number]: INetwork } = {
     chainName: "Arbitrum Testnet",
     chainId: 421611,
     nativeCurrency: {
-      name: "Ethereum",
-      symbol: "ETH",
+      name: "Polygon",
+      symbol: "MATIC",
       decimals: 18,
     },
     rpcUrls: ["https://rinkeby.arbitrum.io/rpc"],
