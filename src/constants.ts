@@ -1,6 +1,6 @@
 import { NodeHelper } from "./helpers/NodeHelper";
 import { EnvHelper } from "./helpers/Environment";
-import ethereum from "./assets/tokens/wMATIC.svg";
+import ethereum from "./assets/tokens/wETH.svg";
 import arbitrum from "./assets/arbitrum.png";
 import avalanche from "./assets/tokens/AVAX.svg";
 
@@ -17,8 +17,8 @@ interface IPoolGraphURLS {
 }
 
 export const POOL_GRAPH_URLS: IPoolGraphURLS = {
-  4: "https://api.thegraph.com/subgraphs/name/pooltogmaticer/rinkeby-v3_4_3",
-  1: "https://api.thegraph.com/subgraphs/name/pooltogmaticer/pooltogmaticer-v3_4_3",
+  4: "https://api.thegraph.com/subgraphs/name/pooltogether/rinkeby-v3_4_3",
+  37: "https://api.thegraph.com/subgraphs/name/pooltogether/pooltogether-v3_4_3",
 };
 
 interface IAddresses {
@@ -28,19 +28,19 @@ interface IAddresses {
 export const addresses: IAddresses = {
   4: {
     DAI_ADDRESS: "0xB2180448f8945C8Cc8AE9809E67D6bd27d8B2f2C", // duplicate
-    OHM_ADDRESS: "0xC0b491daBf3709Ee5Eb79E603D73289Ca6060932",
-    STAKING_ADDRESS: "0xC5d3318C0d74a72cD7C55bdf844e24516796BaB2",
+    OHM_ADDRESS: "0x2013196951B1a35a1a1A400f95e6f08E7fCdB5f0",
+    STAKING_ADDRESS: "0x1b07AB48016FE8076dcFd723d2a33087688cc675",
     STAKING_HELPER_ADDRESS: "0xf73f23Bb0edCf4719b12ccEa8638355BF33604A1",
     OLD_STAKING_ADDRESS: "0xb640AA9082ad720c60102489b806E665d67DCE32",
-    SOHM_ADDRESS: "0x1Fecda1dE7b6951B248C0B62CaeBD5BAbedc2084",
+    SOHM_ADDRESS: "0x0C72868c8874AB9553F7F918Ed17653d8eA3711c",
     WSOHM_ADDRESS: "0xe73384f11Bb748Aa0Bc20f7b02958DF573e6E2ad",
     OLD_SOHM_ADDRESS: "0x8Fc4167B0bdA22cb9890af2dB6cB1B818D6068AE",
     MIGRATE_ADDRESS: "0x3BA7C6346b93DA485e97ba55aec28E8eDd3e33E2",
     DISTRIBUTOR_ADDRESS: "0x0626D5aD2a230E05Fb94DF035Abbd97F2f839C3a",
-    BONDINGCALC_ADDRESS: "0xaDBE4FA3c2fcf36412D618AfCfC519C869400CEB",
+    BONDINGCALC_ADDRESS: "0xA6D140173387B7362AD1bE969d505B95882056D0",
     CIRCULATING_SUPPLY_ADDRESS: "0x5b0AA7903FD2EaA16F1462879B71c3cE2cFfE868",
-    TREASURY_ADDRESS: "0x0d722D813601E48b7DAcb2DF9bae282cFd98c6E7",
-    REDEEM_HELPER_ADDRESS: "0xBd35d8b2FDc2b720842DB372f5E419d39B24781f",
+    TREASURY_ADDRESS: "0x1d5ce2B0EA1cb8CAEeC7b105b2846Ef6ede76802",
+    REDEEM_HELPER_ADDRESS: "0x8Dc2a47D330ff04982fC3cCf15eaeF1C8559A094",
     PT_TOKEN_ADDRESS: "0x0a2d026bacc573a8b5a2b049f956bdf8e5256cfd", // 33T token address, taken from `ticket` function on PRIZE_STRATEGY_ADDRESS
     PT_PRIZE_POOL_ADDRESS: "0xf9081132864ed5e4980CFae83bDB122d86619281", // NEW
     PT_PRIZE_STRATEGY_ADDRESS: "0x2Df17EA8D6B68Ec444c9a698315AfB36425dac8b", // NEW
@@ -53,7 +53,7 @@ export const addresses: IAddresses = {
   },
   1: {
     DAI_ADDRESS: "0x6b175474e89094c44da98b954eedeac495271d0f", // duplicate
-    OHM_ADDRESS: "0x2013196951B1a35a1a1A400f95e6f08E7fCdB5f0",
+    OHM_ADDRESS: "0x383518188c0c6d7730d91b2c03a03c837814a899",
     STAKING_ADDRESS: "0xfd31c7d00ca47653c6ce64af53c1571f9c36566a", // The new staking contract
     STAKING_HELPER_ADDRESS: "0xc8c436271f9a6f10a5b80c8b8ed7d0e8f37a612d", // Helper contract used for Staking only
     OLD_STAKING_ADDRESS: "0x0822F3C03dcc24d200AFF33493Dc08d0e1f274A2",
@@ -186,7 +186,7 @@ interface INetwork {
 
 // These networks will be available for users to select. Other networks may be functional
 // (e.g. testnets, or mainnets being prepared for launch) but need to be selected directly via the wallet.
-export const USER_SELECTABLE_NETWORKS = [1, 42161, 43114];
+export const USER_SELECTABLE_NETWORKS = [37, 42161, 43114];
 
 // Set this to the chain number of the most recently added network in order to enable the 'Now supporting X network'
 // message in the UI. Set to -1 if we don't want to display the message at the current time.
@@ -202,7 +202,7 @@ export const NETWORKS: { [key: number]: INetwork } = {
       decimals: 18,
     },
     rpcUrls: [""],
-    blockExplorerUrls: ["https://polygon-rpc.com/#/"],
+    blockExplorerUrls: ["https://polygonscan.com/#/"],
     image: ethereum,
     imageAltText: "Ethereum Logo",
     uri: () => NodeHelper.getMainnetURI(1),
@@ -212,11 +212,11 @@ export const NETWORKS: { [key: number]: INetwork } = {
     chainId: 4,
     nativeCurrency: {
       name: "Ethereum",
-      symbol: "MATIC",
+      symbol: "ETH",
       decimals: 18,
     },
     rpcUrls: [""],
-    blockExplorerUrls: ["https://rinkeby.maticerscan.io/#/"],
+    blockExplorerUrls: ["https://rinkeby.etherscan.io/#/"],
     image: ethereum,
     imageAltText: "Ethereum Logo",
     uri: () => NodeHelper.getMainnetURI(4),
@@ -226,7 +226,7 @@ export const NETWORKS: { [key: number]: INetwork } = {
     chainId: 42161,
     nativeCurrency: {
       name: "Ethereum",
-      symbol: "MATIC",
+      symbol: "ETH",
       decimals: 18,
     },
     rpcUrls: ["https://arb1.arbitrum.io/rpc"],
@@ -240,7 +240,7 @@ export const NETWORKS: { [key: number]: INetwork } = {
     chainId: 421611,
     nativeCurrency: {
       name: "Ethereum",
-      symbol: "MATIC",
+      symbol: "ETH",
       decimals: 18,
     },
     rpcUrls: ["https://rinkeby.arbitrum.io/rpc"],
